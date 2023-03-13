@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from Pages.secondary_functions import get_html, get_urls
 
-URL = "https://ru.wikipedia.org/wiki/Special:Random"
+URL = "https://datalaboratory.one/"
 
 
 def wiki_parser(url: str):

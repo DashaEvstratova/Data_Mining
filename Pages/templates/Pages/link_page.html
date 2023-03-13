@@ -18,25 +18,7 @@
     <div class="col-md-4 offset-md-5">
         <div class="form-container">
             <div class="form-icon"><i class="fa fa-user"></i></div>
-            <h1>Page Rank</h1>
-        <br>
-            {% if message %}
-                <b>{{ message }}</b>
-            {% endif %}
-            {% if form.errors %}
-                <b>Введите другую или выберите уже из обработанный:</b>
-            {% endif %}
-        <br>
-            <form action="" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button class="btn btn-primary">Ввести</button>
-            </form>
-            <br>
-        {% for link in list %}
-            <a href="{% url 'link' link.title%}"> {{ link.title }}</a>
-            <br>
-        {% endfor %}
+            ...
         </div>
     </div>
 </div>

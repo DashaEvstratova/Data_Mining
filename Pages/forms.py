@@ -7,4 +7,4 @@ class FirstUrlForm(forms.ModelForm):
     class Meta:
         model = First_urls
         fields = ["url"]
-        labels = {"url": "Ссылка из википедии для анализа: "}
+        labels = {"url": "Ссылка для анализа "}
