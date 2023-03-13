@@ -8,7 +8,7 @@ class First_urls(models.Model):
 
 class Result_url(models.Model):
     first_url = models.ForeignKey(First_urls, on_delete=models.CASCADE)
-    child_link = models.CharField(max_length=1000)
+    child_link = models.CharField(max_length=1000, unique=True)
     number_of_link = models.IntegerField()
     link_probability = models.FloatField(null=True)
 
@@ -17,9 +17,3 @@ class List_of_urls(models.Model):
     first_url = models.ForeignKey(First_urls, on_delete=models.CASCADE)
     main_url = models.ForeignKey(Result_url, on_delete=models.CASCADE)
     child_link = models.CharField(max_length=1000)
-
-
-class Matrix_url(models.Model):
-    first_url = models.ForeignKey(First_urls, on_delete=models.CASCADE)
-    matrix = models.CharField(max_length=100000)
-    vector = models.CharField(max_length=100000)

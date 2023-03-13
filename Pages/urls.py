@@ -18,5 +18,5 @@ from Pages.views import MainView, list_url
 
 urlpatterns = [
     path("", MainView.as_view(), name="main"),
-    path("<str:title>", list_url, name='link')
+    path("<str:title>", list_url, name="link"),
 ]
