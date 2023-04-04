@@ -1,5 +1,3 @@
-import fractions
-
 import requests
 from bs4 import BeautifulSoup
 from validators import url as valid_url

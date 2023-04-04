@@ -1,2 +1,10 @@
-django~=4.1.1
+django~=4.1.7
 psycopg2-binary~=2.9.5
+requests~=2.25.1
+python-dotenv~=0.19.2
+bs4~=0.0.1
+beautifulsoup4~=4.12.0
+validators~=0.20.0
+numpy~=1.24.2
+nltk~=3.8.1
+pymorphy2~=0.9.1

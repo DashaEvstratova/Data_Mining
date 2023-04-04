@@ -121,7 +121,6 @@ def check_url(f_u, link, main_list_url):
     return False
 
 
-
 def get_probability(first_url):
     f_u = first_url.id
     main_id = make_main_id(f_u)
@@ -137,14 +136,11 @@ def get_probability(first_url):
         count += 1
         main.save()
     all_url = make_from_class_to_url(Result_url.objects.filter(first_url=f_u))
-    main_list_url = make_from_class_to_url(Result_url.objects.exclude(link_probability=None))
+    main_list_url = make_from_class_to_url(
+        Result_url.objects.exclude(link_probability=None)
+    )
     while len(all_url) != 0:
         for i in all_url:
             if check_url(f_u, i, main_list_url):
                 main_list_url.append(i)
                 all_url.remove(i)
-
-
-
-
-

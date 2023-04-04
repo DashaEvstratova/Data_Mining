@@ -2,12 +2,11 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 
-
 def make_data():
     data = []
-    with open("/home/daria/PycharmProjects/Page_Rank/data.txt") as f:
+    with open("/home/daria/PycharmProjects/Data_Maining/data.txt") as f:
         while f.readline():
-            n = f.readline().strip().split(', ')
+            n = f.readline().strip().split(", ")
             data.append([n[0], n[1]])
     return data
 

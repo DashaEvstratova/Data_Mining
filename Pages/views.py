@@ -64,12 +64,17 @@ def list_url(request, title):
     if list_of_link[0].link_probability is None:
         get_probability(first_url)
         lists = List_of_urls.objects.filter(first_url=f_u)
-        with open('/home/daria/PycharmProjects/Page_Rank/data.txt', 'w') as f:
+        with open("/home/daria/PycharmProjects/Data_Maining/data.txt", "w") as f:
             for i in lists:
                 main_id = i.main_url.id
-                child_id = Result_url.objects.get(child_link=i.child_link, first_url=f_u).id
-                f.write(f'{main_id}, {child_id}')
-                f.write('\n')
+                child_id = Result_url.objects.get(
+                    child_link=i.child_link, first_url=f_u
+                ).id
+                f.write(f"{main_id}, {child_id}")
+                f.write("\n")
     list_of_link = list_of_link.order_by("-link_probability")
-    return render(request, "Pages/link_page.html", {"list_url": list_of_link,
-                                                    "first_url": first_url})
+    return render(
+        request,
+        "Pages/link_page.html",
+        {"list_url": list_of_link, "first_url": first_url},
+    )

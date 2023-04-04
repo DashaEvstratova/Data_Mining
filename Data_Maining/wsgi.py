@@ -1,5 +1,5 @@
 """
-WSGI config for Page_Rank project.
+WSGI config for Data_Maining project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Page_Rank.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Data_Maining.settings")
 
 application = get_wsgi_application()
