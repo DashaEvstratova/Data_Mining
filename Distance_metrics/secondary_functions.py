@@ -138,7 +138,6 @@ def result_cousins(set_of_url, sport, news, shopping, science):
     res_cousins_sport = cousins(set_of_url, sport)
     res_cousins_news = cousins(set_of_url, news)
     res_cousins_shopping = cousins(set_of_url, shopping)
-    print(res_cousins_science, res_cousins_sport, res_cousins_news, res_cousins_shopping)
     result_cousins_number = max(
         res_cousins_science, res_cousins_sport, res_cousins_news, res_cousins_shopping
     )
