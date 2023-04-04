@@ -18,7 +18,7 @@
     <div class="col-md-4 offset-md-5">
         <div class="form-container">
             <div class="form-icon"><i class="fa fa-user"></i></div>
-            <h1>Определение категории</h1>
+            <h1>Определение категории ссылок википедии</h1>
         <br>
             {% if message %}
                 <b>{{ message }}</b>
@@ -33,10 +33,24 @@
                 <button class="btn btn-primary">Ввести</button>
             </form>
             <br>
-        {% for link in list %}
-            <a href="{% url 'link' link.title%}"> {{ link.title }}</a>
-            <br>
+        <table class="table">
+        <thead>
+   <tr>
+    <th scope="col">Ссылка</th>
+    <th scope="col">Категория по Жаккару</th>
+    <th scope="col">Вероятность</th>
+   <th scope="col">Категория по метрике Косинуса</th>
+    <th scope="col">Вероятность</th>
+   </tr>
+   </thead>
+        {% for result in list %}
+            <tr>
+                <td><a href="{{ result.url.url }}"> {{ result.url.title }}</a></td>
+                <td>{{ result.category_jaccard }}</td><td>{{ result.category_jaccard_number }}</td>
+            <td>{{ result.category_cosinus }}</td><td>{{ result.category_cosinus_number }}</td>
+            </tr>
         {% endfor %}
+        </table>
         </div>
     </div>
 </div>
