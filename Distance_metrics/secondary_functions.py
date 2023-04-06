@@ -71,7 +71,7 @@ def get_data_from_csv(file):
         for row in file_reader:
             if row != None:
                 for i in row[0].split(" "):
-                    res.append(morph.parse(i.replace('"', ''))[0].normal_form)
+                    res.append(morph.parse(i.replace('"', ""))[0].normal_form)
     res = delete_stop_words(res)
     return res
 

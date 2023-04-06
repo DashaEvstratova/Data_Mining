@@ -61,11 +61,13 @@ class MainView(View):
                 result_of_cousins = result_cousins(
                     set_of_url, sport, news, shopping, science
                 )[1]
-                Result.objects.create(url=data_of_url,
-                                      category_jaccard=result_of_jaccard,
-                                      category_jaccard_number=result_of_jaccard_number,
-                                      category_cosinus=result_of_cousins,
-                                      category_cosinus_number=result_of_cousins_number)
+                Result.objects.create(
+                    url=data_of_url,
+                    category_jaccard=result_of_jaccard,
+                    category_jaccard_number=result_of_jaccard_number,
+                    category_cosinus=result_of_cousins,
+                    category_cosinus_number=result_of_cousins_number,
+                )
                 return self._render(request, form)
             except IntegrityError:
                 message = "Эта ссылка уже была обработана"
